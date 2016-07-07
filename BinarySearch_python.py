@@ -25,10 +25,9 @@ def main():
 	l=0
 	n= len(arr)
 	r=n-1
-	#mid= (l+r)/2
 	while l<=r:
 		mid= (l+r)/2
-		#print l,r,mid
+		print l,r,mid
 		if   x== arr[mid]:
 			writer(mid)
 			exit(0)
