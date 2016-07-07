@@ -11,30 +11,37 @@ inFile= sys.argv[1]
 outFile= sys.argv[2]
 
 def writer(st):
-	fout= open(outFile,"w")
+	fout= open(outFile,"a")
 	fout.write(str(st)+"\n")
 	fout.close()
 def main():
 	fin= open(inFile,"r")
 	all= fin.readlines()
 	fin.close()
-	arr= all[0].split()
-	arr = [int(x) for x in arr]
-	x= int(all[1])
-	#print arr,x
-	l=0
-	n= len(arr)
-	r=n-1
-	while l<=r:
-		mid= (l+r)/2
-		print l,r,mid
-		if   x== arr[mid]:
-			writer(mid)
-			exit(0)
-		elif x < arr[mid]:
-			r= mid-1
-		else:	l= mid+1
-	writer(-1)	
+	fout= open(outFile,"w")
+	fout.close()
+	T= int(all[0])
+	i=0
+	while(i<T):
+		arr= all[(2*i)+1].split()
+		arr = [int(x) for x in arr]
+		x= int(all[(2*i)+2])
+		l=0
+		n= len(arr)
+		r=n-1
+		flag=0
+		while l<=r:
+			mid= (l+r)/2
+			print i,l,r,mid
+			if   x== arr[mid]:
+				writer(mid)
+				flag=1
+				break
+			elif x < arr[mid]:
+				r= mid-1
+			else:	l= mid+1
+		if flag==0: writer(-1)
+		i+=1	
 			 
 	
 
