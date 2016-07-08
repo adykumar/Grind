@@ -19,6 +19,10 @@ class ArrayLeaders{
 		int T= scanner.nextInt(); // read number of test cases
 		for(int i=0;i<T;i++){
 			int N= scanner.nextInt();  // read number of elements
+			if (T<=0 || N<=0){
+				System.out.println("T,N has to be >0");
+				return;
+			}
 			ArrayList<Integer> arr= new ArrayList<Integer>(N);
 			for(int j=0;j<N;j++){
 				arr.add(scanner.nextInt());  // arr: list for the array
