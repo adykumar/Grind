@@ -1,19 +1,46 @@
-import java.util.Scanner;
+import java.util.*;
 import java.io.File;
 
 class BinarySearch_java{
-	public static void main(String args[]){
-		if(args.length !=2) {
-			System.out.println("Usage: javac BinarySearch_java <inputfile> <outputfile>");
-			System.exit(0);
-		}	
-		Scanner scanner = new Scanner(new File(args[0]));
-		int [] arr= new int [100];
-		int i=0;
-		while(scanner.hasNextInt()){
-			arr[i++]= scanner.nextInt();
+
+	public static int binary_search(ArrayList<Integer> arr, int x){
+		int l=0; int r= arr.size()-1;
+		while(l<=r){
+			int mid= (l+r)/2;
+			if (arr.get(mid)==x) return mid;
+			else if (arr.get(mid)>x) r=mid-1;
+			else l= mid+1;
 		}
-		for(i=0;i<arr.length;i++) System.out.println(arr[i]);
-		
+		return -1;
+	}
+	
+	public static void main(String args[]){
+		int T;
+		Scanner scanner= new Scanner(System.in);
+		T= scanner.nextInt();
+		if(T<=0){
+			System.out.println("T is less than 1");
+			return;
+		}
+		while(T>0){
+			T=T-1;
+			scanner= new Scanner(System.in);
+			int N= scanner.nextInt();
+			if(N<=0){
+                        	System.out.println("N is less than 1");
+				return;
+                	}
+			ArrayList<Integer> arr= new ArrayList<Integer>();
+			int loop=0;
+			while(loop<N){
+				loop+=1;
+				scanner = new Scanner(System.in);
+				arr.add(scanner.nextInt());
+				
+			}
+			scanner= new Scanner(System.in);
+			int x= scanner.nextInt();
+			System.out.println(binary_search(arr,x));
+		}	
 	}
 }
