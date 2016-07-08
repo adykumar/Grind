@@ -24,7 +24,6 @@ class BinarySearch_java{
 		}
 		while(T>0){
 			T=T-1;
-			scanner= new Scanner(System.in);
 			int N= scanner.nextInt();
 			if(N<=0){
                         	System.out.println("N is less than 1");
@@ -34,13 +33,12 @@ class BinarySearch_java{
 			int loop=0;
 			while(loop<N){
 				loop+=1;
-				scanner = new Scanner(System.in);
 				arr.add(scanner.nextInt());
 				
 			}
-			scanner= new Scanner(System.in);
 			int x= scanner.nextInt();
 			System.out.println(binary_search(arr,x));
-		}	
+		}
+		scanner.close();	
 	}
 }
