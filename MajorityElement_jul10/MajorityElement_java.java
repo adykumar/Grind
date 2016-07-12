@@ -15,6 +15,10 @@ class MajorityElement {
 			}
 		}
 		int result[]= new int[] {0,0};
+		focus_count=0;
+		for(int i=0;i<l;i++) {
+			if(focus_ele==arr.get(i)) focus_count+=1;
+		}
 		if(focus_count>l/2) {
 			result[0]= focus_ele; 
 			result[1]=1; 
