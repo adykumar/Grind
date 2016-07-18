@@ -17,7 +17,7 @@ class PivotedBS {
 
 	public static int findPivotedBinary(List<Integer> arr, int size, int X) {
 		int pivot= findPivot(arr, size);
-		System.out.print(pivot+" ");
+		//System.out.print(pivot+" ");
 		int left=0;
 		int right= size-1;
 		while(left<=right) {
