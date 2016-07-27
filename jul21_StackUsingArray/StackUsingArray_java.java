@@ -27,7 +27,7 @@ class StackUsingArray {
 			else System.out.println("Cant pop, empty");
 		}
 
-		int x= myStack.peek();
-		System.out.println("Peeked:" +x);
+		if (! myStack.isEmpty())
+			System.out.println("Peeked:" +myStack.peek());
 	}
 }
