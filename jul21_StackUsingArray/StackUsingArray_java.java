@@ -13,7 +13,7 @@ class StackUsingArray {
 		int C= scanner.nextInt();
 		int N= scanner.nextInt();
 		if (N>C) {System.out.println("Over capacity!"); return;}
-		Stackops myStack;
+		Stackops myStack= new Stackops();
 		myStack.createStack(C);
 		for(int i=0;i<N;i++) {
 			myStack.push(scanner.nextInt());

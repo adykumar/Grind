@@ -36,6 +36,10 @@ public class Stackops {
 	}
 
 	public int peek() {
+		if (top==-1) {
+			System.out.println("Empty! Cant peek");
+			return -1;
+		}
 		return stack[top];
 	}
 
