@@ -13,26 +13,20 @@ class LinkedList {
 		return false;
 	}
 
-	public void push(int x) {
+	public void insertAtHead(int x) {
 		Node temp= new Node();
 		temp.data= x;
 		temp.next= head.next;
 		head.next= temp;
 	}
 
-	public int pop() {
+	public int removeFromHead() {
 		if (isEmpty()) {
 			//System.out.println("Empty List!");
 			return -1;
 		}
 		int x= head.next.data;
 		head= head.next;
-		System.out.print("Popped: ");
 		return x;
-	}
-
-	public int peek() {
-		if (!isEmpty()) return head.next.data;
-		return 0;
 	}
 }
