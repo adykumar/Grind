@@ -8,11 +8,6 @@ class LinkedList {
 		head= new Node();
 	}
 
-	public boolean isEmpty() {
-		if (head.next==null) return true;
-		return false;
-	}
-
 	public void insertAtHead(int x) {
 		Node temp= new Node();
 		temp.data= x;

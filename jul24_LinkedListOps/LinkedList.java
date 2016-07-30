@@ -1,5 +1,10 @@
 import java.util.*;
+/* REQUIRED FUNCTIONALITY---
+- insert at front
+- insert at end
+- insert after given node
 
+*/
 class LinkedList {
 
 	Node head;
@@ -28,6 +33,16 @@ class LinkedList {
 		temp.data=x;
 		tail.next= temp;
 		tail=temp;
+	}
+
+	public void deleteByKey(int x) {
+		Node trav= head;
+		while(trav.next!=null) {
+			if (trav.next.data == x) {
+				trav.next= trav.next.next;
+			}
+			trav= trav.next;
+		}
 	}
 
 	public void display() {
