@@ -10,9 +10,11 @@ class Driver {
 		for (int i=0;i<N;i++) {
 			String s= scanner.nextLine();
 			String parts[]= s.split(" ");
-			if (parts[0] == "I" || parts[0] == "i") list1.insertAtBack( parseInt(parts[1]) ); 
-			if (parts[0] == "K" || parts[0] == "k") list1.deleteByKey ( parseInt(parts[1]) );
-			if (parts[0] == "P" || parts[0] == "p") list1.deleteByPos ( parseInt(parts[1]) );
+			if (parts[0].equals("I"))	list1.insertAtBack( Integer.parseInt(parts[1]) );
+			if (parts[0].equals("K")) 	list1.deleteByKey ( Integer.parseInt(parts[1]) );
+			if (parts[0].equals("P")) 	list1.deleteByPos ( Integer.parseInt(parts[1]) );
+			System.out.print("Input: "+s+" List: "); list1.display();
+			//
 		}
 	}
 }

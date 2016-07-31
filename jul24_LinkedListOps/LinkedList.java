@@ -41,7 +41,18 @@ class LinkedList {
 			if (trav.next.data == x) {
 				trav.next= trav.next.next;
 			}
-			trav= trav.next;
+			if (trav.next!=null) trav= trav.next;
+		}
+	}
+
+	public void deleteByPos(int x) {
+		Node trav= head;
+		while (x>0 && trav.next!=null) {
+			trav=trav.next;
+			x--;
+		}
+		if (trav.next!=null) {
+			trav.next= trav.next.next;
 		}
 	}
 
