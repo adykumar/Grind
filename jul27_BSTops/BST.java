@@ -1,22 +1,19 @@
 class BST {
 
-	bstNode head;
+	bstNode head= new bstNode();
 	public BST() {
-		head= new bstNode();
 		head= null;
 	}
 
-	public void insert(int x) {	
-		insert(head, x);
+	public void insert(int x) {
+		if(head==null) head.data=10;
+		//else insert(head, x);
+		if (head==null) System.out.println(head);
 	}
 
 	public void insert(bstNode h,int x) {
-		if (head== null) {
-			h.data= x;
-			return;
-		}
 		if (x >= h.data) {
-			
+
 			if (h.right== null) {
 				bstNode temp= new bstNode();
 				temp.data= x;
@@ -24,7 +21,7 @@ class BST {
 				return;
 			}
 			insert(h.right, x);
-		} 
+		}
 		else {
 			if (h.left== null) {
 				bstNode temp= new bstNode();
